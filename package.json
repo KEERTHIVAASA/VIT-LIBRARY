@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "build-client": "cd client && npm run build",
+    "build": "npm run install-server && npm run install-client && npm run build-client",
     "start": "NODE_ENV=production node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
